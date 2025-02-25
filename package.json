@@ -1,5 +1,5 @@
 {
-  "name": "git-key-manager",
+  "name": "ssh-manager",
   "version": "1.0.0-beta.1",
   "private": true,
   "type": "module",

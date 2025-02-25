@@ -54,9 +54,10 @@ fn create_default_config(path: &PathBuf) -> Result<(), Box<dyn std::error::Error
 
 pub fn get_config_path() -> Result<PathBuf, Box<dyn std::error::Error>> {
     let home = dirs::home_dir().ok_or("Could not find home directory")?;
-    Ok(home.join(".git-key-manager").join("config.json"))
+    Ok(home.join(".ssh-manager").join("config.json"))
 }
 
+#[allow(dead_code)]
 fn get_git_global_config(key: &str) -> Result<String, Box<dyn std::error::Error>> {
     let output = Command::new("git")
         .args(["config", "--global", key])
@@ -70,6 +71,7 @@ fn get_git_global_config(key: &str) -> Result<String, Box<dyn std::error::Error>
 }
 
 #[tauri::command]
+#[allow(dead_code)]
 pub async fn get_git_config() -> Result<Config, String> {
     let user_name = get_git_global_config("user.name")
         .map_err(|e| e.to_string())?;
@@ -85,6 +87,7 @@ pub async fn get_git_config() -> Result<Config, String> {
 }
 
 #[tauri::command]
+#[allow(dead_code)]
 pub async fn save_git_config(config: Config) -> Result<(), String> {
     // 设置全局 Git 配置
     Command::new("git")

@@ -1178,25 +1178,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "git-key-manager"
-version = "1.0.0-beta.1"
-dependencies = [
- "arboard",
- "chrono",
- "dirs",
- "git2",
- "libsodium-sys",
- "notify",
- "openssh-keys",
- "rusqlite",
- "serde",
- "serde_json",
- "tauri",
- "tauri-build",
- "tokio",
-]
-
-[[package]]
 name = "git2"
 version = "0.18.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3211,6 +3192,25 @@ dependencies = [
  "gobject-sys",
  "libc",
  "system-deps 5.0.0",
+]
+
+[[package]]
+name = "ssh-manager"
+version = "1.0.0-beta.1"
+dependencies = [
+ "arboard",
+ "chrono",
+ "dirs",
+ "git2",
+ "libsodium-sys",
+ "notify",
+ "openssh-keys",
+ "rusqlite",
+ "serde",
+ "serde_json",
+ "tauri",
+ "tauri-build",
+ "tokio",
 ]
 
 [[package]]

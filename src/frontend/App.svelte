@@ -25,10 +25,10 @@
         <h1 class="text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
           <img 
             src={logo}
-            alt="Git Key Manager"
+            alt="SSH Manager"
             class="w-8 h-8"
           />
-          Git Key Manager
+          SSH Manager
         </h1>
         <button 
           class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300"

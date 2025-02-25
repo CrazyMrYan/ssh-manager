@@ -1,8 +1,8 @@
-# Git Key Manager
+# SSH Manager
 
 <div align="center">
-  <img src="icons/128x128@2x.png" alt="Git Key Manager Logo" width="128" height="128">
-  <p>一个简单易用的 Git SSH 密钥管理工具</p>
+  <img src="icons/128x128@2x.png" alt="SSH Manager Logo" width="128" height="128">
+  <p>一个简单易用的 SSH 密钥管理工具</p>
 </div>
 
 ## 功能特点
@@ -35,7 +35,7 @@
 
 ```bash
 # 使用 Homebrew
-brew install --cask git-key-manager
+brew install --cask ssh-manager
 ```
 
 ### Windows
@@ -48,11 +48,11 @@ brew install --cask git-key-manager
 
 ```bash
 # Debian/Ubuntu
-sudo dpkg -i git-key-manager_1.0.0_amd64.deb
+sudo dpkg -i ssh-manager_1.0.0_amd64.deb
 
 # 其他发行版
-chmod +x git-key-manager_1.0.0_amd64.AppImage
-./git-key-manager_1.0.0_amd64.AppImage
+chmod +x ssh-manager_1.0.0_amd64.AppImage
+./ssh-manager_1.0.0_amd64.AppImage
 ```
 
 ## 开发
@@ -68,19 +68,19 @@ chmod +x git-key-manager_1.0.0_amd64.AppImage
 
 ```bash
 # 克隆仓库
-git clone https://github.com/yourusername/git-key-manager.git
-cd git-key-manager
+git clone https://github.com/CrazyMrYan/ssh-manager.git
+cd ssh-manager
 
 # 安装依赖
 yarn install # 或 npm install
 
 # 启动开发服务器
-yarn tauri dev  # 或 npm run tauri dev
+yarn serve  # 或 npm run serve
 ```
 
 ### 构建
 
-Git Key Manager 提供了多种构建命令，用于生成不同平台的安装包。
+SSH Manager 提供了多种构建命令，用于生成不同平台的安装包。
 
 #### 基本构建命令
 
@@ -217,7 +217,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tagName: v__VERSION__
-          releaseName: 'Git Key Manager v__VERSION__'
+          releaseName: 'SSH Manager v__VERSION__'
           releaseBody: 'See the assets to download this version and install.'
           releaseDraft: true
           prerelease: false
@@ -233,7 +233,7 @@ jobs:
 ## 项目结构
 
 ```
-git-key-manager/
+ssh-manager/
 ├── src/                 # Svelte 前端代码
 ├── src-tauri/           # Rust 后端代码
 │   ├── src/             # Rust 源代码
@@ -244,38 +244,11 @@ git-key-manager/
 └── package.json         # 项目配置和依赖
 ```
 
-## 常见问题
-
-### 构建时遇到 "Option::unwrap() on a None value" 错误
-
-这通常是由于 Tauri 配置问题导致的。请确保：
-1. `tauri.conf.json` 中的配置正确
-2. 所有必要的依赖项已安装
-3. 尝试清理构建缓存 (`yarn clean`)
-
-### 跨平台构建失败
-
-跨平台构建失败是常见问题，特别是在 macOS 上构建 Windows 应用时。常见错误包括：
-
-1. **找不到系统头文件**（如 `sys/types.h` 或 `stdio.h`）：
-   - 这是因为 macOS 上的交叉编译工具链不包含完整的 Windows 系统头文件
-   - 解决方案：使用 GitHub Actions 在 Windows 环境中构建
-
-2. **VCPKG 相关错误**：
-   - 确保已安装 vcpkg 并设置了 `VCPKG_ROOT` 环境变量
-   - 安装所需的 Windows 库：`vcpkg install zlib:x64-windows`
-
-3. **链接器错误**：
-   - 确保 `~/.cargo/config.toml` 中正确配置了 Windows 目标
-   - 检查是否安装了 MinGW-w64 工具链
-
-**最佳解决方案**：使用 GitHub Actions 或其他 CI/CD 服务在各自的原生平台上构建应用。
-
 ## 贡献
 
-欢迎提交 Pull Request 或创建 Issue！
+欢迎贡献代码、报告问题或提出改进建议！请通过以下方式参与：
 
-1. Fork 本仓库
+1. Fork 仓库
 2. 创建您的特性分支 (`git checkout -b feature/amazing-feature`)
 3. 提交您的更改 (`git commit -m 'Add some amazing feature'`)
 4. 推送到分支 (`git push origin feature/amazing-feature`)
@@ -283,7 +256,7 @@ git-key-manager/
 
 ## 许可证
 
-[MIT License](LICENSE)
+本项目采用 MIT 许可证 - 详情请参阅 [LICENSE](LICENSE) 文件。
 
 ## 联系方式
 

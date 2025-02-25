@@ -107,6 +107,8 @@ fn main() {
             set_git_config,
             delete_git_config,
             get_public_key,
+            get_git_config,
+            save_git_config,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

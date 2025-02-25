@@ -1,8 +1,8 @@
 [package]
-name = "git-key-manager"
+name = "ssh-manager"
 version = "1.0.0-beta.1"
 edition = "2021"
-description = "A cross-platform Git key management tool"
+description = "A cross-platform SSH key management tool"
 
 [build-dependencies]
 tauri-build = { version = "1.5", features = [] }
